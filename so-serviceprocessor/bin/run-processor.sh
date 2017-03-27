@@ -9,7 +9,7 @@ function usage() {
 }
 
 function run() {
-    CMD="java -jar ${JAR_PATH} --spring.config.location=${CONFIG_PATH} $1"
+    CMD="java -jar ${JAR_PATH} --spring.config.locationForDB=${CONFIG_PATH} $1"
     echo ${CMD}
     ${CMD}
     return

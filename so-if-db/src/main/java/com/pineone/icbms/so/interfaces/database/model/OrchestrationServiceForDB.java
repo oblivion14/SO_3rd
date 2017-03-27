@@ -1,8 +1,7 @@
 package com.pineone.icbms.so.interfaces.database.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Orchestration Service model for authoring.<BR/>
@@ -11,26 +10,90 @@ import javax.persistence.Table;
 @Entity
 @Table(name="orchestration_service")
 public class OrchestrationServiceForDB extends CommonEntity {
-    @Column(name = "virtual_object_id")
-    String virtualObjectId;
 
-    @Column(name = "parent_id")
-    String parentId;
+//    @Id
+//    @Column(name = "orchestration_service_id")
+//    private int id;
 
-    public String getVirtualObjectId() {
-        return virtualObjectId;
+//    @Column(name = "name")
+//    private String name;
+
+    //NOTE: TODO : Join 필요 OneToMany
+//    @Column(name = "virtual_object_ids")
+//    private List<String> virtualObject_ids;
+
+    @Column(name = "uri")
+    private String uri;
+
+//    @Column(name= "description")
+//    String description;
+
+//    @Temporal(TemporalType.DATE)
+//    Date create_date;
+
+//    @Temporal(TemporalType.DATE)
+//    Date modified_date;
+
+    @Override
+    public int getId() {
+        return id;
     }
 
-    public void setVirtualObjectId(String virtualObjectId) {
-        this.virtualObjectId = virtualObjectId;
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getParentId() {
-        return parentId;
+    @Override
+    public String getName() {
+        return name;
     }
 
-    public void setParentId(String parentId) {
-        this.parentId = parentId;
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+//    public List<String> getVirtualObject_ids() {
+//        return virtualObject_ids;
+//    }
+//
+//    public void setVirtualObject_ids(List<String> virtualObject_ids) {
+//        this.virtualObject_ids = virtualObject_ids;
+//    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getCreated_date() {
+        return created_date;
+    }
+
+    public void setCreated_date(Date created_date) {
+        this.created_date = created_date;
+    }
+
+    public Date getModified_date() {
+        return modified_date;
+    }
+
+    public void setModified_date(Date modified_date) {
+        this.modified_date = modified_date;
     }
 }
 

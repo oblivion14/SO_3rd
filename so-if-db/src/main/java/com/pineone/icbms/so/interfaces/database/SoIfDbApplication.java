@@ -18,7 +18,6 @@ public class SoIfDbApplication {
      * run application.<BR/>
      * @param args arguments
      */
-    public static void main(String[] args) {
-		SpringApplication.run(SoIfDbApplication.class, args);
+    public static void main(String[] args) { SpringApplication.run(SoIfDbApplication.class, args);
     }
 }

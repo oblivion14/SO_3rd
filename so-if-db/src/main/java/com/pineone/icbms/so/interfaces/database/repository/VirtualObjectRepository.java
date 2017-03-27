@@ -13,5 +13,5 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "virtual_object")
-public interface VirtualObjectRepository extends JpaRepository<VirtualObjectForDB, String> {
+public interface VirtualObjectRepository extends JpaRepository<VirtualObjectForDB, Integer> {
 }
