@@ -1,6 +1,10 @@
 package com.pineone.icbms.so.interfaces.database.model;
 
+import com.pineone.icbms.so.util.time.DateFormat;
+import javafx.scene.input.DataFormat;
+
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -10,9 +14,9 @@ import java.util.Date;
 @Table(name="location")
 public class LocationForDB extends CommonEntity{
 
-//    @Id
-//    @Column(name = "location_id")
-//    private int id;
+    @Id
+    @Column(name = "location_id")
+    private int id;
 
 //    @Column(name = "name")
 //    private String name;
@@ -36,9 +40,9 @@ public class LocationForDB extends CommonEntity{
         this.id = id;
         this.name = name;
         this.uri = uri;
-        Date date = new Date();
-        this.created_date = date;
-        this.modified_date = date;
+        Date date = Calendar.getInstance().getTime();
+        this.created_date = DateFormat.dateFormat(date);
+        this.modified_date = DateFormat.dateFormat(date);
     }
 
     public int getId() {
@@ -71,21 +75,5 @@ public class LocationForDB extends CommonEntity{
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Date getCreated_date() {
-        return created_date;
-    }
-
-    public void setCreated_date(Date created_date) {
-        this.created_date = created_date;
-    }
-
-    public Date getModified_date() {
-        return modified_date;
-    }
-
-    public void setModified_date(Date modified_date) {
-        this.modified_date = modified_date;
     }
 }

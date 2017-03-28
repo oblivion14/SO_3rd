@@ -39,6 +39,8 @@ repositories {
 
 dependencies {
     //spring-boot
+    compile project(":so-util")
+
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-jdbc")
     compile('org.springframework.boot:spring-boot-starter-data-jpa')

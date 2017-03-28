@@ -1,19 +1,29 @@
 package com.pineone.icbms.so.interfaces.database.model;
 
+import com.pineone.icbms.so.util.time.DateFormat;
+
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
  * Virtual Object model for authoring.<BR/>
  * Created by uni4love on 2017. 1. 13..
  */
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "findRecentVirtualObject",
+                query = "SELECT * FROM virtual_object ORDER BY created_date DESC LIMIT 1",
+                resultClass = VirtualObjectForDB.class
+        )
+})
 @Entity
 @Table(name="virtual_object")
 public class VirtualObjectForDB extends CommonEntity {
 
-//    @Id
-//    @Column(name = "virtual_object_id")
-//    private int id;
+    @Id
+    @Column(name = "virtual_object_id")
+    private int id;
 
 //    @Column(name = "name")
 //    private String name;
@@ -31,9 +41,10 @@ public class VirtualObjectForDB extends CommonEntity {
         this.functionality_id = functionality;
         this.aspect_id = aspect;
         super.description = description;
-        Date date = new Date();
-        super.created_date = date;
-        super.modified_date = date;
+        Date date = Calendar.getInstance().getTime();
+        String dateString = DateFormat.dateFormat(date);
+        super.created_date = dateString;
+        super.modified_date = dateString;
     }
 
     public VirtualObjectForDB() {
@@ -44,7 +55,7 @@ public class VirtualObjectForDB extends CommonEntity {
         this.functionality_id = functionality_id;
         this.aspect_id = aspect_id;
         super.description = description;
-        super.modified_date = modified_date;
+        super.modified_date = DateFormat.dateFormat(modified_date);
     }
 
 //    @Column(name= "description")
@@ -56,12 +67,10 @@ public class VirtualObjectForDB extends CommonEntity {
 //    @Temporal(TemporalType.DATE)
 //    Date modified_date;
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public void setId(int id) {
         this.id = id;
     }
@@ -102,21 +111,6 @@ public class VirtualObjectForDB extends CommonEntity {
         this.description = description;
     }
 
-    public Date getCreated_date() {
-        return created_date;
-    }
-
-    public void setCreated_date(Date created_date) {
-        this.created_date = created_date;
-    }
-
-    public Date getModified_date() {
-        return modified_date;
-    }
-
-    public void setModified_date(Date modified_date) {
-        this.modified_date = modified_date;
-    }
 
     @Override
     public String toString() {

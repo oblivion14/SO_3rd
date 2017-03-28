@@ -10,10 +10,10 @@ import java.util.Date;
 @MappedSuperclass
 public class CommonEntity { //extends AbstractPersistable<String> {
 
-    @Id
+//    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    int id;
+//    @Column(name = "id")
+//    int id;
 
     @Column(name = "name", nullable = false)
     String name;
@@ -27,19 +27,19 @@ public class CommonEntity { //extends AbstractPersistable<String> {
 //    @Column(name = "modifiedDate", nullable = false)
 //    Timestamp modifiedDate;
 
-    @Temporal(TemporalType.DATE)
-    Date created_date;
+    @Column(name = "created_date")
+    String created_date;
 
-    @Temporal(TemporalType.DATE)
-    Date modified_date;
+    @Column(name = "modified_date")
+    String modified_date;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public String getName() {
         return name;
@@ -57,19 +57,19 @@ public class CommonEntity { //extends AbstractPersistable<String> {
         this.description = description;
     }
 
-    public Date getCreated_date() {
+    public String getCreated_date() {
         return created_date;
     }
 
-    public void setCreated_date(Date created_date) {
+    public void setCreated_date(String created_date) {
         this.created_date = created_date;
     }
 
-    public Date getModified_date() {
+    public String getModified_date() {
         return modified_date;
     }
 
-    public void setModified_date(Date modified_date) {
+    public void setModified_date(String modified_date) {
         this.modified_date = modified_date;
     }
 }

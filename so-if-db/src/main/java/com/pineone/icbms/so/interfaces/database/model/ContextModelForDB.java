@@ -11,9 +11,9 @@ import java.util.Date;
 @Table(name = "context_model")
 public class ContextModelForDB extends CommonEntity {
 
-//    @Id
-//    @Column(name = "context_model_id")
-//    private int id;
+    @Id
+    @Column(name = "context_model_id")
+    private int id;
 
 //    @Column(name = "name")
 //    private String name;
@@ -31,12 +31,10 @@ public class ContextModelForDB extends CommonEntity {
 //    @Temporal(TemporalType.DATE)
 //    Date modified_date;
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public void setId(int id) {
         this.id = id;
     }
@@ -69,21 +67,7 @@ public class ContextModelForDB extends CommonEntity {
         this.description = description;
     }
 
-    public Date getCreated_date() {
-        return created_date;
-    }
 
-    public void setCreated_date(Date created_date) {
-        this.created_date = created_date;
-    }
-
-    public Date getModified_date() {
-        return modified_date;
-    }
-
-    public void setModified_date(Date modified_date) {
-        this.modified_date = modified_date;
-    }
 
     //    @ManyToMany
 //    List<ContextInformationForDB> contextInformationList;

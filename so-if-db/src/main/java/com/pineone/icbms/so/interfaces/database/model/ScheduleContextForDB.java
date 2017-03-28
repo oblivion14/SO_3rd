@@ -2,6 +2,7 @@ package com.pineone.icbms.so.interfaces.database.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -12,6 +13,10 @@ import javax.persistence.Table;
 @Table(name = "schedule_context")
 public class ScheduleContextForDB extends CommonEntity {
 
+    @Id
+    @Column(name = "schedule_id")
+    String id;
+
     @Column(name = "schedule", nullable = false)
     String schedule;
 
@@ -21,5 +26,13 @@ public class ScheduleContextForDB extends CommonEntity {
 
     public void setSchedule(String schedule) {
         this.schedule = schedule;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

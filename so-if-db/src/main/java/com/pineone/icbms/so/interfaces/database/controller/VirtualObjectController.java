@@ -60,9 +60,8 @@ public class VirtualObjectController {
             return responseMessage;
         }
 
-        VirtualObjectForDB virtualObjectForDB = virtualObjectLogic.createVirtualObject(virtualObjectData);
-        String resultMessage = responseMessage.virtualObjectResultMessage(virtualObjectForDB);
-        responseMessage.setMessage("Create : " + resultMessage);
+        String createMessage = virtualObjectLogic.createVirtualObject(virtualObjectData);
+        responseMessage.setMessage(createMessage);
         return responseMessage;
     }
 
@@ -78,9 +77,8 @@ public class VirtualObjectController {
             return responseMessage;
         }
 
-        VirtualObjectForDB virtualObjectForDB = virtualObjectLogic.updateVirtualObject(id, virtualObjectData);
-        String resultMessage = responseMessage.virtualObjectResultMessage(virtualObjectForDB);
-        responseMessage.setMessage("Update : " + resultMessage);
+        String updateMessage = virtualObjectLogic.updateVirtualObject(id, virtualObjectData);
+        responseMessage.setMessage(updateMessage);
         return responseMessage;
     }
 
@@ -88,8 +86,8 @@ public class VirtualObjectController {
     @RequestMapping(value = "/delete/{id}")
     @ResponseBody
     public ResponseMessage deleteVirtualObject(@PathVariable int id){
-        String resultMessage = virtualObjectLogic.deleteVirtualObject(id);
-        responseMessage.setMessage(resultMessage);
+        String deleteMessage = virtualObjectLogic.deleteVirtualObject(id);
+        responseMessage.setMessage(deleteMessage);
         return responseMessage;
     }
 }

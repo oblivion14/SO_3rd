@@ -12,9 +12,9 @@ import java.util.List;
 @Table(name="context_information")
 public class ContextInformationForDB extends CommonEntity {
 
-//    @Id
-//    @Column(name = "context_information_id")
-//    private int id;
+    @Id
+    @Column(name = "context_information_id")
+    private int id;
 
 //    @Column(name = "name")
 //    private String name;
@@ -31,12 +31,10 @@ public class ContextInformationForDB extends CommonEntity {
 //    @Temporal(TemporalType.DATE)
 //    Date modified_date;
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public void setId(int id) {
         this.id = id;
     }

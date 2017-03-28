@@ -11,9 +11,9 @@ import java.util.Date;
 @Table(name="aspect")
 public class AspectForDB extends CommonEntity {
 
-//    @Id
-//    @Column(name = "aspect_id")
-//    private int id;
+    @Id
+    @Column(name = "aspect_id")
+    private int id;
 
 //    @Column(name = "name")
 //    private String name;
@@ -25,7 +25,6 @@ public class AspectForDB extends CommonEntity {
 //    String description;
 
 
-    @Override
     public int getId() {
         return id;
     }

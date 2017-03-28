@@ -14,7 +14,7 @@ public class ResponseMessage {
     private String exceptionMessage;
     private String message;
 
-    // NOTE : Profile 관련 전달 메시지 생성
+    // NOTE : VirtualObject 관련 전달 메시지 생성
     public String virtualObjectResultMessage(VirtualObjectForDB virtualObjectForDB){
         message = virtualObjectForDB.toString();
         return message;

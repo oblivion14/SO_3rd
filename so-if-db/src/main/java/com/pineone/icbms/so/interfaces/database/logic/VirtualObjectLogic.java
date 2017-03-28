@@ -11,7 +11,7 @@ import java.util.List;
 public interface VirtualObjectLogic {
     VirtualObjectForDB retrieveVirtualObject(int id);
     List<VirtualObjectForDB> retrieveVirtualObjectList();
-    VirtualObjectForDB createVirtualObject(VirtualObjectData virtualObjectData);
-    VirtualObjectForDB updateVirtualObject(int id, VirtualObjectData virtualObjectData);
+    String createVirtualObject(VirtualObjectData virtualObjectData);
+    String updateVirtualObject(int id, VirtualObjectData virtualObjectData);
     String deleteVirtualObject(int id);
 }

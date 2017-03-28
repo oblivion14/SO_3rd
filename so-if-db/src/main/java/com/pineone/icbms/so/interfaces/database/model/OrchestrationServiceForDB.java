@@ -11,9 +11,9 @@ import java.util.Date;
 @Table(name="orchestration_service")
 public class OrchestrationServiceForDB extends CommonEntity {
 
-//    @Id
-//    @Column(name = "orchestration_service_id")
-//    private int id;
+    @Id
+    @Column(name = "orchestration_service_id")
+    private int id;
 
 //    @Column(name = "name")
 //    private String name;
@@ -34,12 +34,10 @@ public class OrchestrationServiceForDB extends CommonEntity {
 //    @Temporal(TemporalType.DATE)
 //    Date modified_date;
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public void setId(int id) {
         this.id = id;
     }
@@ -80,20 +78,5 @@ public class OrchestrationServiceForDB extends CommonEntity {
         this.description = description;
     }
 
-    public Date getCreated_date() {
-        return created_date;
-    }
-
-    public void setCreated_date(Date created_date) {
-        this.created_date = created_date;
-    }
-
-    public Date getModified_date() {
-        return modified_date;
-    }
-
-    public void setModified_date(Date modified_date) {
-        this.modified_date = modified_date;
-    }
 }
 

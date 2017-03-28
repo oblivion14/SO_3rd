@@ -12,9 +12,9 @@ import java.util.Date;
 @Table(name="profile")
 public class ProfileForDB extends CommonEntity {
 
-//    @Id
-//    @Column(name = "profile_id")
-//    private int id;
+    @Id
+    @Column(name = "profile_id")
+    private int id;
 
 //    @Column(name = "name")
 //    private String name;
@@ -80,12 +80,10 @@ public class ProfileForDB extends CommonEntity {
 //    }
 
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public void setId(int id) {
         this.id = id;
     }
@@ -132,22 +130,6 @@ public class ProfileForDB extends CommonEntity {
     @Override
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Date getCreated_date() {
-        return created_date;
-    }
-
-    public void setCreated_date(Date created_date) {
-        this.created_date = created_date;
-    }
-
-    public Date getModified_date() {
-        return modified_date;
-    }
-
-    public void setModified_date(Date modified_date) {
-        this.modified_date = modified_date;
     }
 
     public boolean isEneabled() {

@@ -13,9 +13,9 @@ import java.util.List;
 @Table(name="composite_virtual_object")
 public class CompositeVirtualObjectForDB extends CommonEntity {
 
-//    @Id
-//    @Column(name = "composite_virtual_object")
-//    private int id;
+    @Id
+    @Column(name = "composite_virtual_object_id")
+    private int id;
 
 //    @Column(name = "name")
 //    private String name;
@@ -35,12 +35,10 @@ public class CompositeVirtualObjectForDB extends CommonEntity {
     @Column(name = "type")
     private String type;
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public void setId(int id) {
         this.id = id;
     }
