@@ -1,4 +1,4 @@
-//package com.pineone.icbms.so.interfaces.database.controller;
+package com.pineone.icbms.so.interfaces.database.controller;//package com.pineone.icbms.so.interfaces.database.controller;
 //
 //import com.pineone.icbms.so.interfaces.database.controller.inputdata.AspectData;
 //import com.pineone.icbms.so.interfaces.database.logic.itf.AspectDAO;
