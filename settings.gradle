@@ -10,5 +10,4 @@ include ':so-if-serviceintegration'
 include ':so-web'
 include 'so-if-sda'
 include 'test'
-include 'so-scheduler'
 

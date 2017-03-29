@@ -12,12 +12,19 @@ apply plugin: 'idea'
 
 buildscript {
     repositories {
+        jcenter()
         mavenCentral()
     }
-    dependencies {
-//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${SPRING_BOOT_VERSION}")
-        classpath("io.spring.gradle:dependency-management-plugin:0.5.7.RELEASE")
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${SPRING_BOOT_VERSION}"
+}
+
+subprojects {
+    group 'com.pineone.icbms.so'
+
+    apply plugin: 'java'
+
+    repositories {
+        jcenter()
+        mavenCentral()
     }
 }
 
