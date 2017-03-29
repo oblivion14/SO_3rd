@@ -13,6 +13,6 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "fixed_device")
-public interface FixedDeviceRepository extends JpaRepository<FixedDeviceForDB, String> {
+public interface FixedDeviceRepository extends JpaRepository<FixedDeviceForDB, Long> {
 
 }

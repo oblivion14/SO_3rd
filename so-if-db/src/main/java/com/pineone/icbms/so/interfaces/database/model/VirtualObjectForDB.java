@@ -23,7 +23,7 @@ public class VirtualObjectForDB extends CommonEntity {
 
     @Id
     @Column(name = "virtual_object_id")
-    private int id;
+    private long id;
 
 //    @Column(name = "name")
 //    private String name;
@@ -37,25 +37,25 @@ public class VirtualObjectForDB extends CommonEntity {
     private int aspect_id;
 
     public VirtualObjectForDB(String name, int functionality, int aspect, String description) {
-        super.name = name;
+        this.name = name;
         this.functionality_id = functionality;
         this.aspect_id = aspect;
-        super.description = description;
+        this.description = description;
         Date date = Calendar.getInstance().getTime();
         String dateString = DateFormat.dateFormat(date);
-        super.created_date = dateString;
-        super.modified_date = dateString;
+        this.created_date = dateString;
+        this.modified_date = dateString;
     }
 
     public VirtualObjectForDB() {
     }
 
     public VirtualObjectForDB(String name, int functionality_id, int aspect_id, String description, Date modified_date) {
-        super.name = name;
+        this.name = name;
         this.functionality_id = functionality_id;
         this.aspect_id = aspect_id;
-        super.description = description;
-        super.modified_date = DateFormat.dateFormat(modified_date);
+        this.description = description;
+        this.modified_date = DateFormat.dateFormat(modified_date);
     }
 
 //    @Column(name= "description")
@@ -67,11 +67,12 @@ public class VirtualObjectForDB extends CommonEntity {
 //    @Temporal(TemporalType.DATE)
 //    Date modified_date;
 
-    public int getId() {
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

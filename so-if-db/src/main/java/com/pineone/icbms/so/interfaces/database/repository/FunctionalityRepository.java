@@ -13,5 +13,5 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "functionality")
-public interface FunctionalityRepository extends JpaRepository<FunctionalityForDB, String> {
+public interface FunctionalityRepository extends JpaRepository<FunctionalityForDB, Long> {
 }

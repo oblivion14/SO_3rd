@@ -21,27 +21,4 @@ buildscript {
     }
 }
 
-subprojects {
-    group 'com.pineone.icbms.so'
-
-    apply plugin: 'java'
-    apply plugin: 'idea'
-    apply plugin: 'eclipse'
-    apply plugin: 'spring-boot'
-    apply plugin: 'io.spring.dependency-management'
-
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-
-    dependencies {
-        compile "com.withwiz:httpclientservice:0.1.1"
-        compile("org.springframework.boot:spring-boot-starter-web:${SPRING_BOOT_VERSION}")
-        compile("org.springframework.boot:spring-boot-starter-data-mongodb:${SPRING_BOOT_VERSION}")
-        compile("org.springframework.boot:spring-boot-starter-actuator:${SPRING_BOOT_VERSION}")
-        compile("org.springframework.boot:spring-boot-starter-test")
-    }
-}
-
 

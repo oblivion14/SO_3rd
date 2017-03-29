@@ -1,6 +1,8 @@
 package com.pineone.icbms.so.interfaces.database.ref;
 
 
+import com.pineone.icbms.so.interfaces.database.controller.inputdata.AspectData;
+import com.pineone.icbms.so.interfaces.database.controller.inputdata.VirtualObjectData;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,6 +20,15 @@ public class DataValidation {
                 || virtualObjectData.getFunctionality_id() == 0
                 || virtualObjectData.getAspect_id() == 0
                 || virtualObjectData.getDescription() == null){
+            throw new DataLossException();
+        }
+    }
+
+    public void inspectAspectData(AspectData aspectData) throws DataLossException {
+        //
+        if(aspectData.getName() == null
+                || aspectData.getUri() == null
+                || aspectData.getDescription() == null){
             throw new DataLossException();
         }
     }

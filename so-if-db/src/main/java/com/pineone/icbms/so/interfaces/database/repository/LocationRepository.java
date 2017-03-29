@@ -12,5 +12,5 @@ import javax.persistence.Table;
 
 @Repository
 @Table(name = "location")
-public interface LocationRepository extends JpaRepository<LocationForDB, Integer> {
+public interface LocationRepository extends JpaRepository<LocationForDB, Long> {
 }

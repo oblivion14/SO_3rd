@@ -1,24 +1,23 @@
 package com.pineone.icbms.so.interfaces.database.logic;
 
+import com.pineone.icbms.so.interfaces.database.logic.itf.VirtualObjectDAO;
 import com.pineone.icbms.so.interfaces.database.model.VirtualObjectForDB;
-import com.pineone.icbms.so.interfaces.database.ref.DataLossException;
-import com.pineone.icbms.so.interfaces.database.ref.VirtualObjectData;
+import com.pineone.icbms.so.interfaces.database.controller.inputdata.VirtualObjectData;
 import com.pineone.icbms.so.interfaces.database.repository.VirtualObjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
  * Created by melvin on 2017. 3. 27..
  */
 
+//NOTE: VirtualObject Data Access 로직 구현
 @Service
-public class VirtualObjectLogicImpl implements VirtualObjectLogic {
+public class VirtualObjectDAOImpl implements VirtualObjectDAO {
 
     @Autowired
     VirtualObjectRepository virtualObjectRepository;
@@ -28,7 +27,7 @@ public class VirtualObjectLogicImpl implements VirtualObjectLogic {
 
     //NOTE : VO 단일 조회 기능 구현
     @Override
-    public VirtualObjectForDB retrieveVirtualObject(int id){
+    public VirtualObjectForDB retrieveVirtualObject(long id){
         return virtualObjectRepository.findById(id);
     }
 
@@ -42,7 +41,7 @@ public class VirtualObjectLogicImpl implements VirtualObjectLogic {
     @Override
     public String createVirtualObject(VirtualObjectData virtualObjectData) {
         VirtualObjectForDB virtualObjectForDB = createVirtualObjectDataConversion(virtualObjectData);
-        int id = entityManager.createNamedQuery("findRecentVirtualObject", VirtualObjectForDB.class)
+        long id = entityManager.createNamedQuery("findRecentVirtualObject", VirtualObjectForDB.class)
                 .getSingleResult().getId();
         virtualObjectForDB.setId(id+1);
         //     virtualObjectForDB.setId((int)virtualObjectRepository.count()+1);
@@ -52,7 +51,7 @@ public class VirtualObjectLogicImpl implements VirtualObjectLogic {
 
     //NOTE : VO 갱신 기능 구현
     @Override
-    public String updateVirtualObject(int id, VirtualObjectData virtualObjectData) {
+    public String updateVirtualObject(long id, VirtualObjectData virtualObjectData) {
         if(virtualObjectRepository.findOne(id) != null){
             VirtualObjectForDB virtualObjectForDB = virtualObjectRepository.findById(id);
             virtualObjectForDB = updateVirtualObjectDataConversion(virtualObjectData);
@@ -67,8 +66,9 @@ public class VirtualObjectLogicImpl implements VirtualObjectLogic {
         }
     }
 
+    //NOTE: VO 삭제 기능 구현
     @Override
-    public String deleteVirtualObject(int id) {
+    public String deleteVirtualObject(long id) {
         VirtualObjectForDB virtualObjectForDB = virtualObjectRepository.findById(id);
         virtualObjectRepository.delete(id);
         String message = "Delete : " + virtualObjectForDB.toString();

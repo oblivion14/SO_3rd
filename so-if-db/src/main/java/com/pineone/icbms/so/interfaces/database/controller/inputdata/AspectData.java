@@ -1,17 +1,16 @@
-package com.pineone.icbms.so.interfaces.database.ref;
+package com.pineone.icbms.so.interfaces.database.controller.inputdata;
 
 import java.util.Date;
 
 /**
- * Created by melvin on 2017. 3. 27..
+ * Created by melvin on 2017. 3. 28..
  */
 
-//NOTE: 외부로부터 입력받기 위한 VirtualObject 데이터 셋 구성
-public class VirtualObjectData {
+//NOTE: 외부로부터 입력받기 위한 Aspect 데이터 셋 구성
+public class AspectData {
 
     String name;
-    int functionality_id;
-    int aspect_id;
+    String uri;
     String description;
     Date modified_date;
 
@@ -23,20 +22,12 @@ public class VirtualObjectData {
         this.name = name;
     }
 
-    public int getFunctionality_id() {
-        return functionality_id;
+    public String getUri() {
+        return uri;
     }
 
-    public void setFunctionality_id(int functionality_id) {
-        this.functionality_id = functionality_id;
-    }
-
-    public int getAspect_id() {
-        return aspect_id;
-    }
-
-    public void setAspect_id(int aspect_id) {
-        this.aspect_id = aspect_id;
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
     public String getDescription() {

@@ -13,6 +13,6 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "fixed_device")
-public interface ScheduleContextRepository extends JpaRepository<ScheduleContextForDB, String> {
+public interface ScheduleContextRepository extends JpaRepository<ScheduleContextForDB, Long> {
 
 }

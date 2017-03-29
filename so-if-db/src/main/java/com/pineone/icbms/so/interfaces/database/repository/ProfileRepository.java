@@ -13,6 +13,6 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "profile")
-public interface ProfileRepository extends JpaRepository<ProfileForDB, String> {
+public interface ProfileRepository extends JpaRepository<ProfileForDB, Long> {
 
 }

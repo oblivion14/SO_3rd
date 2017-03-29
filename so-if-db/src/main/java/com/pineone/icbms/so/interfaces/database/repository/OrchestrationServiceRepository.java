@@ -13,5 +13,5 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "orchestration_service")
-public interface OrchestrationServiceRepository extends JpaRepository<OrchestrationServiceForDB, String> {
+public interface OrchestrationServiceRepository extends JpaRepository<OrchestrationServiceForDB, Long> {
 }

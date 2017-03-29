@@ -13,5 +13,5 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "aspect")
-public interface AspectRepository extends JpaRepository<AspectForDB, String> {
+public interface AspectRepository extends JpaRepository<AspectForDB, Long> {
 }
