@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Collection Utiltity class.<BR/>
- *
+ * <p>
  * Created by uni4love on 2017. 1. 16..
  */
 public class CollectionUtils {
@@ -13,16 +13,20 @@ public class CollectionUtils {
      * cast List by TYPE.<BR/>
      *
      * @param srcList source list
-     * @param clas Class type to cast
-     * @param <T> Type
+     * @param clas    Class type to cast
+     * @param <T>     Type
      * @return casted List
      */
     public static <T> List<T> castCollection(List srcList, Class<T> clas) {
-        List<T> list = new ArrayList<T>();
-        for (Object obj : srcList) {
-            if (obj != null && clas.isAssignableFrom(obj.getClass()))
-                list.add(clas.cast(obj));
+        if (srcList != null) {
+            List<T> list = new ArrayList<T>();
+            for (Object obj : srcList) {
+                if (obj != null && clas.isAssignableFrom(obj.getClass()))
+                    list.add(clas.cast(obj));
+            }
+            return list;
         }
-        return list;
+        else
+            return null;
     }
 }

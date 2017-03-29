@@ -23,6 +23,7 @@ public class PropertyUtils {
 
     /**
      * return Map<String, String> from Properties.<BR/>
+     *
      * @param properties Properties
      * @return Map<String, String>
      */

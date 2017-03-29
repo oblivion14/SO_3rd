@@ -7,7 +7,7 @@ package com.pineone.icbms.so.devicecontrol.model.virtualdevice.driver;
  */
 public interface IGenericDeviceDriver<RESC> extends IDeviceDriver {
     /**
-     * devicemapper control method
+     * device control method
      */
     void control(RESC ... resource);
 }

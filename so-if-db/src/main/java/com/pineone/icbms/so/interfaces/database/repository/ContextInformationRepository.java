@@ -13,5 +13,5 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "context_information")
-public interface ContextInformationRepository extends JpaRepository<ContextInformationForDB, Long> {
+public interface ContextInformationRepository extends JpaRepository<ContextInformationForDB, String> {
 }

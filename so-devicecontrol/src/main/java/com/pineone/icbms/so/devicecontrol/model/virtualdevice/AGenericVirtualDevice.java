@@ -10,9 +10,14 @@ import com.pineone.icbms.so.virtualobject.common.AGenericIdNameOwner;
  */
 abstract public class AGenericVirtualDevice extends AGenericIdNameOwner implements IGenericVirtualDevice {
     /**
-     * devicemapper driver
+     * driver for devicemapper
      */
     protected IGenericDeviceDriver deviceDriver;
+
+    /**
+     * device driver class name
+     */
+    protected String driverClassName;
 
     /**
      * constructor<BR/>
@@ -25,6 +30,10 @@ abstract public class AGenericVirtualDevice extends AGenericIdNameOwner implemen
     }
 
     @Override
+    public String getDriverClassName() {
+        return this.driverClassName;
+    }
+
     public IGenericDeviceDriver getDeviceDriver() {
         return deviceDriver;
     }

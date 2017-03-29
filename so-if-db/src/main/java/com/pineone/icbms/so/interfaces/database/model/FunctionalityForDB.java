@@ -1,7 +1,8 @@
 package com.pineone.icbms.so.interfaces.database.model;
 
-import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Function model for authoring.<BR/>
@@ -10,43 +11,8 @@ import java.util.Date;
 @Entity
 @Table(name = "functionality")
 public class FunctionalityForDB extends CommonEntity {
-
-    @Id
-    @Column(name = "functionality_id")
-    private int id;
-
-//    @Column(name = "name")
-//    private String name;
-
     @Column(name = "uri")
     String uri;
-
-//    @Column(name= "description")
-//    String description;
-
-//    @Temporal(TemporalType.DATE)
-//    Date create_date;
-
-//    @Temporal(TemporalType.DATE)
-//    Date modified_date;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getUri() {
         return uri;
@@ -55,15 +21,4 @@ public class FunctionalityForDB extends CommonEntity {
     public void setUri(String uri) {
         this.uri = uri;
     }
-
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
-    @Override
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
 }

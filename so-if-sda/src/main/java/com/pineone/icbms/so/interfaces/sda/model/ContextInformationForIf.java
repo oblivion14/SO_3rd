@@ -1,5 +1,6 @@
 package com.pineone.icbms.so.interfaces.sda.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.pineone.icbms.so.virtualobject.common.AGenericIdNameOwner;
 
 /**
@@ -7,6 +8,7 @@ import com.pineone.icbms.so.virtualobject.common.AGenericIdNameOwner;
  *
  * Created by uni4love on 2017. 1. 19..
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ContextInformationForIf extends AGenericIdNameOwner {
     /**
      * uri

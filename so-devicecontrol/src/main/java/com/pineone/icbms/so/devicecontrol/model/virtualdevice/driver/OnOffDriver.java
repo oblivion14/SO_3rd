@@ -7,7 +7,7 @@ package com.pineone.icbms.so.devicecontrol.model.virtualdevice.driver;
  */
 public class OnOffDriver implements IGenericDeviceDriver {
     /**
-     * devicemapper control method
+     * device control method
      *
      * @param resource
      */

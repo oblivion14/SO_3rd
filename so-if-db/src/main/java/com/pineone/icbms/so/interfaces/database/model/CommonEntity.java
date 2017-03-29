@@ -1,19 +1,20 @@
 package com.pineone.icbms.so.interfaces.database.model;
 
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 
 /**
  * handler entity model.<BR/>
  * Created by uni4love on 2017. 1. 13..
  */
 @MappedSuperclass
-public class CommonEntity { //extends AbstractPersistable<String> {
-
-//    @Id
+public class CommonEntity extends AbstractPersistable<String> {
+    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "id")
-//    int id;
+    @Column(name = "id")
+    String id;
 
     @Column(name = "name", nullable = false)
     String name;
@@ -21,25 +22,19 @@ public class CommonEntity { //extends AbstractPersistable<String> {
     @Column(name = "description")
     String description;
 
-//    @Column(name = "createdDate", nullable = false)
-//    Timestamp createdDate;
-//
-//    @Column(name = "modifiedDate", nullable = false)
-//    Timestamp modifiedDate;
+    @Column(name = "createdDate", nullable = false)
+    Timestamp createdDate;
 
-    @Column(name = "created_date")
-    String created_date;
+    @Column(name = "modifiedDate", nullable = false)
+    Timestamp modifiedDate;
 
-    @Column(name = "modified_date")
-    String modified_date;
+    public String getId() {
+        return id;
+    }
 
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -57,19 +52,19 @@ public class CommonEntity { //extends AbstractPersistable<String> {
         this.description = description;
     }
 
-    public String getCreated_date() {
-        return created_date;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreated_date(String created_date) {
-        this.created_date = created_date;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 
-    public String getModified_date() {
-        return modified_date;
+    public Timestamp getModifiedDate() {
+        return modifiedDate;
     }
 
-    public void setModified_date(String modified_date) {
-        this.modified_date = modified_date;
+    public void setModifiedDate(Timestamp modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 }

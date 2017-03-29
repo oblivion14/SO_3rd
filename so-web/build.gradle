@@ -9,7 +9,7 @@ version "${VERSION.build}"
 
 buildscript {
 	ext {
-		springBootVersion = '1.4.3.RELEASE'
+		springBootVersion = '1.5.1.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -22,7 +22,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = "${VERSION.java}"
 
@@ -35,7 +35,7 @@ dependencies {
 	compile project(':so-util')
 	compile project(':so-virtualobject')
 	compile project(':so-devicecontrol')
-	compile project(':so-if-db')
+//	compile project(':so-if-db')
 	compile project(':so-if-sda')
 	compile project(':so-if-serviceintegration')
 	compile project(':so-serviceprocessor') {
@@ -44,19 +44,26 @@ dependencies {
 
 	//spring-boot
 	compile('org.springframework.boot:spring-boot-starter-aop')
-	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-web') {
+		exclude module: "spring-boot-starter-tomcat"
+	}
+	compile('org.springframework.boot:spring-boot-starter-jetty')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 
 	//actuator
-	compile('org.springframework.boot:spring-boot-starter-actuator')
+//	compile('org.springframework.boot:spring-boot-starter-actuator')
 
 	//remote shell
-	compile('org.springframework.boot:spring-boot-starter-remote-shell')
+//	compile('org.springframework.boot:spring-boot-starter-remote-shell')
 
 	//tomcat ; for binding on external tomcat
 //	compile('org.springframework.boot:spring-boot-starter-tomcat')
 
 	//test
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+bootRun {
+	jvmArgs = ["-Dspring.config.location=/svc/apps/so/so/so-web/conf/application-dev.properties", "-Dspring.profiles.active=dev"]
 }

@@ -2,9 +2,16 @@ package com.pineone.icbms.so.virtualobject.aspect;
 
 /**
  * Aspect default class.<BR/>
+ *
  * Created by uni4love on 2016. 11. 27..
  */
 public class DefaultAspect extends AGenericAspect {
+    /**
+     * constructor
+     */
+    public DefaultAspect() {
+    }
+
     /**
      * constructor<BR/>
      *

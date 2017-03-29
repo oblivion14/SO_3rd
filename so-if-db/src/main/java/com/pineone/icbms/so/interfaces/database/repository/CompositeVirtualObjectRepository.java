@@ -13,5 +13,5 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "composite_virtual_object")
-public interface CompositeVirtualObjectRepository extends JpaRepository<CompositeVirtualObjectForDB, Long> {
+public interface CompositeVirtualObjectRepository extends JpaRepository<CompositeVirtualObjectForDB, String> {
 }

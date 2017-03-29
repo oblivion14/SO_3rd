@@ -2,7 +2,6 @@ package com.pineone.icbms.so.interfaces.database.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -12,11 +11,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="device_control_callback")
 public class DeviceControlCallbackForDB extends CommonEntity {
-
-    @Id
-    @Column(name = "deivce_control_id")
-    String id;
-
     @Column(name = "orchestration_service_id", nullable = false)
     String parentId;
 
@@ -38,14 +32,6 @@ public class DeviceControlCallbackForDB extends CommonEntity {
 
     public void setParentId(String parentId) {
         this.parentId = parentId;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }
 

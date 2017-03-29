@@ -13,5 +13,5 @@ import javax.persistence.Table;
  */
 @Repository
 @Table(name = "device_control_callback")
-public interface DeviceControlCallbackRepository extends JpaRepository<DeviceControlCallbackForDB, Long> {
+public interface DeviceControlCallbackRepository extends JpaRepository<DeviceControlCallbackForDB, String> {
 }

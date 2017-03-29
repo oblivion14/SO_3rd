@@ -1,5 +1,6 @@
 package com.pineone.icbms.so.util.registry;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +21,7 @@ abstract public class AGenericKeyValueRegistry<K, V> implements IGenericKeyValue
     /**
      * registry name
      */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     protected String name = null;
 
     /**

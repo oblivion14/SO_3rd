@@ -13,6 +13,12 @@ abstract class AGenericAspect extends AGenericIdNameOwner implements IGenericAsp
     protected String uri;
 
     /**
+     * constructor
+     */
+    public AGenericAspect() {
+    }
+
+    /**
      * constructor<BR/>
      *
      * @param id id

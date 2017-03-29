@@ -4,14 +4,12 @@ import com.pineone.icbms.so.virtualobject.aspect.IGenericAspect;
 import com.pineone.icbms.so.virtualobject.common.AGenericIdNameOwner;
 import com.pineone.icbms.so.virtualobject.functionlity.IGenericFunctionality;
 
-import java.io.Serializable;
-
 /**
  * abstract Generic virtual object.<BR/>
  *
  * Created by uni4love on 2016. 11. 16..
  */
-abstract public class AGenericVirtualObject extends AGenericIdNameOwner implements IGenericVirtualObject, Serializable {
+abstract public class AGenericVirtualObject extends AGenericIdNameOwner implements IGenericVirtualObject {
     /**
      * functionality
      */

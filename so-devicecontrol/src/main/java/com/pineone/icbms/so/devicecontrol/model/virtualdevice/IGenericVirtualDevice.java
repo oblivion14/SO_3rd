@@ -1,7 +1,5 @@
 package com.pineone.icbms.so.devicecontrol.model.virtualdevice;
 
-import com.pineone.icbms.so.devicecontrol.model.virtualdevice.driver.IGenericDeviceDriver;
-
 /**
  * generic virtual devicemapper interface.<BR/>
  *
@@ -9,8 +7,9 @@ import com.pineone.icbms.so.devicecontrol.model.virtualdevice.driver.IGenericDev
  */
 public interface IGenericVirtualDevice extends IVirtualDevice {
     /**
-     * devicemapper driver
-     * @return devicemapper driver
+     * driver info for devicemapper
+     *
+     * @return device driver info for devicemapper
      */
-    IGenericDeviceDriver getDeviceDriver();
+    String getDriverClassName();
 }
