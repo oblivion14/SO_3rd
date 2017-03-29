@@ -53,15 +53,15 @@ public class VOCrudTest {
         }
     }
 
-    @Test
-    public void delete() throws Exception {
-
-        virtualObjectDAO.deleteVirtualObject(9);
-
-        List<VirtualObjectForDB> virtualObjectForDBList = virtualObjectDAO.retrieveVirtualObjectList();
-
-        for(VirtualObjectForDB virtualObjectForDB : virtualObjectForDBList){
-            System.out.println(virtualObjectForDB.toString());
-        }
-    }
+//    @Test
+//    public void delete() throws Exception {
+//
+//        virtualObjectDAO.deleteVirtualObject(9);
+//
+//        List<VirtualObjectForDB> virtualObjectForDBList = virtualObjectDAO.retrieveVirtualObjectList();
+//
+//        for(VirtualObjectForDB virtualObjectForDB : virtualObjectForDBList){
+//            System.out.println(virtualObjectForDB.toString());
+//        }
+//    }
 }
