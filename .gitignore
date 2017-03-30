@@ -162,7 +162,6 @@
 
 
 */build
-*.xml
 *.imi
 */build
 *.imi
