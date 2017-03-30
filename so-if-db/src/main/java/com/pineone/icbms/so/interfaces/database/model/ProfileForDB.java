@@ -20,15 +20,15 @@ public class ProfileForDB extends CommonEntity {
 //    private String name;
 
     //NOTE : Join 필요
-    @Column(name = "context_model_id")
+    @JoinColumn(name = "context_model_id")
     private int context_model_id;
 
     //NOTE : Join 필요
-    @Column(name = "orchestration_service_id")
+    @JoinColumn(name = "orchestration_service_id")
     private int orchestration_service_id;
 
     //NOTE : Join 필요
-    @Column(name = "location_id")
+    @JoinColumn(name = "location_id")
     private int location_id;
 
 

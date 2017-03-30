@@ -11,7 +11,7 @@ import java.util.List;
 public interface OrchestrationServiceDAO {
     //
     OrchestrationServiceForDB retrieveOrchestrationService(long id);
-    List<OrchestrationServiceForDB> retrieveOrchestrationService();
+    List<OrchestrationServiceForDB> retrieveOrchestrationServiceList();
     String createOrchestrationService(OrchestrationServiceData orchestrationServiceData);
     String updateOrchestrationService(long id, OrchestrationServiceData orchestrationServiceData);
     String deleteOrchestrationService(long id);

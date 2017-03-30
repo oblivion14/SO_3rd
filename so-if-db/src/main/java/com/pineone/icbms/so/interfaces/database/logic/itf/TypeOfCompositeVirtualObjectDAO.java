@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by melvin on 2017. 3. 29..
  */
-public interface TypeOfCompositeObjectDAO {
+public interface TypeOfCompositeVirtualObjectDAO {
     //
     TypeOfCompositeVirtualObjectForDB retrieveTypeOfCompositeVirtualObject(long id);
     List<TypeOfCompositeVirtualObjectForDB> retrieveTypeOfCompositeVirtualObjectList();
-    String createTypeOfCompositeVirtualObjectForDB(TypeOfCompositeVirtualObjectData typeOfCompositeVirtualObjectData);
-    String updateTypeOfCompositeVirtualObjectForDB(long id, TypeOfCompositeVirtualObjectData typeOfCompositeVirtualObjectData);
-    String deleteTypeOfCompositeVirtualObjectForDB(long id);
+    String createTypeOfCompositeVirtualObject(TypeOfCompositeVirtualObjectData typeOfCompositeVirtualObjectData);
+    String updateTypeOfCompositeVirtualObject(long id, TypeOfCompositeVirtualObjectData typeOfCompositeVirtualObjectData);
+    String deleteTypeOfCompositeVirtualObject(long id);
 }

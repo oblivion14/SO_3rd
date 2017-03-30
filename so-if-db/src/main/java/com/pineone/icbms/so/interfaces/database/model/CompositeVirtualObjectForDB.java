@@ -29,8 +29,9 @@ public class CompositeVirtualObjectForDB extends CommonEntity {
     private int aspect_id;
 
     //NOTE: TODO : Join 필요 OneToMany
-//    @Column(name = "virtual_object_ids")
-//    private List<String> virtual_object_ids;
+    @OneToMany(mappedBy = "compositeVirtualObjectForDB")
+    @Column(name = "virtual_object_ids")
+    private List<VirtualObjectForDB> virtual_object_ids;
 
     @Column(name = "type")
     private String type;
@@ -87,7 +88,15 @@ public class CompositeVirtualObjectForDB extends CommonEntity {
         this.aspect_id = aspect_id;
     }
 
-//    public List<String> getVirtual_object_ids() {
+    public List<VirtualObjectForDB> getVirtual_object_ids() {
+        return virtual_object_ids;
+    }
+
+    public void setVirtual_object_ids(List<VirtualObjectForDB> virtual_object_ids) {
+        this.virtual_object_ids = virtual_object_ids;
+    }
+
+    //    public List<String> getVirtual_object_ids() {
 //        return virtual_object_ids;
 //    }
 //
