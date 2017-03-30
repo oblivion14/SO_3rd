@@ -13,4 +13,6 @@ public interface IGenericVirtualDevice extends IVirtualDevice {
      * @return devicemapper driver
      */
     IGenericDeviceDriver getDeviceDriver();
+    String getDriverClassName();
+    String getId();
 }

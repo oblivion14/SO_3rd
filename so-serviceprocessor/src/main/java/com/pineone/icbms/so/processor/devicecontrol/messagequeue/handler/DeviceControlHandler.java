@@ -31,13 +31,13 @@ public class DeviceControlHandler {
     public void handle(VirtualDeviceForMQ virtualDeviceForMQ) {
         //get DeviceDriver from sda by virtual object features
         SdaClient sdaClient = new SdaClient();
-        List<IGenericVirtualDevice> deviceList = sdaClient.retreiveDeviceList(null, null);
-        for (IGenericVirtualDevice device : deviceList) {
-            String driverClassName = device.getDriverClassName();
+        List<? extends IGenericVirtualDevice> deviceList = sdaClient.retreiveDeviceList(null, null);
+        for (Object device : deviceList) {
+            String driverClassName = ((IGenericVirtualDevice) device).getDriverClassName();
             //load devicemapper driver
             IGenericDeviceDriver deviceDriver = new DeviceDriverLoader().loadDeviceDriver(Settings.DEVICE_DRIVER_PATH, driverClassName);
             //retreive values from sda
-            List<DeviceControlValue> values = sdaClient.retreiveDeviceControlValues(null, null, device.getId());
+            List<DeviceControlValue> values = sdaClient.retrieveDeviceControlValues(null, null, ((IGenericVirtualDevice) device).getId());
             //device control
             //thread process 고민 필요
             deviceDriver.control(values);

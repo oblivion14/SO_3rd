@@ -2,6 +2,9 @@ package com.pineone.icbms.so.interfaces.sda.handle;
 
 import java.util.List;
 
+import com.pineone.icbms.so.devicecontrol.model.virtualdevice.DeviceControlValue;
+import com.pineone.icbms.so.devicecontrol.model.virtualdevice.IGenericVirtualDevice;
+
 /**
  * SDA system interface implements.<BR/>
  *
@@ -48,7 +51,7 @@ public class SdaClient {
      * @param locationUri location uri
      * @return devicemapper list
      */
-    public List<Object> retreiveDeviceList(String functionalityUri, String locationUri) {
+    public List<? extends IGenericVirtualDevice> retreiveDeviceList(String functionalityUri, String locationUri) {
         //implements..
         return null;
     }
@@ -62,5 +65,9 @@ public class SdaClient {
     public List<Object> retreiveOperationList(String deviceUri) {
         //implements..
         return null;
+    }
+    
+    public List<DeviceControlValue> retrieveDeviceControlValues(Object obj, Object obj2, String id) {
+    	return null;
     }
 }
