@@ -15,4 +15,10 @@ public class DefaultVirtualDevice extends AGenericVirtualDevice {
     public DefaultVirtualDevice(String id, String name) {
         super(id, name);
     }
+
+	@Override
+	public String getDriverClassName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
