@@ -173,3 +173,9 @@ gradlew.bat
 */log
 *.png
 *.ucls
+*.class
+*.classpath
+*/.settings
+*/.project
+.settings/
+*.project
